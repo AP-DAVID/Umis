@@ -64,7 +64,7 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
                 )
             }
 
-            <div  className= {(active ? "bg-purple-400 flex space-x-3 py-2 px-4 rounded-xl" : "flex space-x-3 py-2 px-2 rounded-xl" )}>
+            <div  className= {(active ? "bg-purple-400 w-full flex space-x-3 py-2 px-4 rounded-xl" : "w-full flex space-x-3 py-2 px-2 rounded-xl" )}>
 
             {
                 Icon && (
