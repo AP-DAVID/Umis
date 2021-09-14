@@ -52,10 +52,11 @@ function Sidebar({setReveal, reveal}) {
                 <SidebarRow setReveal={setReveal} active={reveal ===1 ? active : notActive} Icon={PresentationChartLineIcon} title="Dashboard"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===2 ? active : notActive} Icon={FireIcon} title="My Subjects"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===3 ? active : notActive} Icon={UserGroupIcon} title="Groups"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===4 ? active : notActive} Icon={ChatAlt2Icon} title="Chat"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===5 ? active : notActive} Icon={CogIcon} title="Settings"  />
+                 <SidebarRow setReveal={setReveal} active={reveal ===7 ? active : notActive} Icon={UserCircleIcon} title="Profile"  />
+                {/* <SidebarRow setReveal={setReveal} active={reveal ===5 ? active : notActive} Icon={CogIcon} title="Settings"  /> */}
                 <SidebarRow setReveal={setReveal} active={reveal ===6 ? active : notActive} Icon={AcademicCapIcon} title="Result"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===7 ? active : notActive} Icon={UserCircleIcon} title="Profile"  />
+               
+                <SidebarRow setReveal={setReveal} active={reveal ===4 ? active : notActive} Icon={ChatAlt2Icon} title="Chat"  />
                 
 
             

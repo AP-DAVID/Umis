@@ -23,9 +23,7 @@ function Landing() {
                         Your story starts with us.
                       </h1>
                       <p className="mt-4 text-lg text-gray-300">
-                        This is a simple example of a Landing Page you can build
-                        using Tailwind Starter Kit. It features multiple CSS
-                        components based on the Tailwindcss design system.
+                        Your Personalized student Management System, Connect with your teachers and Students virtually
                       </p>
                     </div>
                   </div>
@@ -60,47 +58,47 @@ function Landing() {
               <div className="flex flex-wrap">
 
 
-                <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
                   <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                         <i className="fas fa-award"></i>
                       </div>
-                      <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                      <h6 className="text-xl font-semibold">  Login as Teacher</h6>
                       <p className="mt-2 mb-4 text-gray-600">
-                        Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.
+                        Connect with your Administrator, share resources and other valuable functionalities with your students now!, .
                       </p>
                     </div>
                   </div>
                 </div>
   
-                <div className="w-full md:w-4/12 px-4 text-center">
+                <div className="w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
                   <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
                         <i className="fas fa-retweet"></i>
                       </div>
                       <h6 className="text-xl font-semibold">
-                        Free Revisions
+                        Login as Student
                       </h6>
                       <p className="mt-2 mb-4 text-gray-600">
-                        Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.
+                        Connect with your classmates and teachers via a dashboard!!
                       </p>
                     </div>
                   </div>
                 </div>
   
-                <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+                <div className="pt-6 w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
                   <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
                         <i className="fas fa-fingerprint"></i>
                       </div>
                       <h6 className="text-xl font-semibold">
-                        Verified Company
+                        Login as Admin
                       </h6>
                       <p className="mt-2 mb-4 text-gray-600">
-                        Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!
+                        Access to Crud functionality of the web management ecosystem between in the teachers, students and the Administrator
                       </p>
                     </div>
                   </div>

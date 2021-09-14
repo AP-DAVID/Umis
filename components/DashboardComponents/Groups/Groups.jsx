@@ -30,7 +30,7 @@ function Groups() {
                         <div className=" h-12 w-11 bg-gray-400 rotate-45 transform origin-bottom-left"></div>
                     </div>
 
-                   <div className="sm:px-5 my-10 mr:10  sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
+                   <div className="sm:px-5  my-10 sm:mr:10 justify-items-stretch sm:space-x-1 sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
                           <Groupcard />
                           <Groupcard />
                           <Groupcard />
