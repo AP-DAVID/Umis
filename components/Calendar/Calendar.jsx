@@ -15,7 +15,7 @@ export const HeaderSelector = ({ text, index, selected, setActive, classType }) 
       className={classType}
       onClick={() => setActive(index)}
       style={{
-        backgroundColor: index === selected ? "#35ebc7" : "transparent",
+        backgroundColor: index === selected ? "#b56be9" : "transparent",
         color: index === selected ? "black" : "black",
         transition: "background-color 1s",
 
@@ -340,7 +340,7 @@ export const Calendar = () => {
                             className='cursor-pointer text-center text-sm rounded-lg leading-loose w-7  hover:bg-blue-400 font-skylight'
                             style={{
                               backgroundColor: isToday(day)
-                                ? '#35ebc7'
+                                ? '#b56be9'
                                 : dateFromDay(day) || betweenDays(day)
                                 ? '#add8e6 '
                                 : 'white',

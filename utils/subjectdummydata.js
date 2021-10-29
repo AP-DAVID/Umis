@@ -16,49 +16,49 @@ export const SubjectOffering = [
             teacher : "Mr Bolu"
         },
         {
-            id : 1,
+            id : 2,
             src : `/subimages/${sub2}.jpg`,
             Name : sub2,
             teacher : "Mrs Funke"
         },
         {
-            id : 1,
+            id : 3,
             src : `/subimages/${sub3}.jpg`,
             Name : sub3,
             teacher : "Mrs Yetunde"
         },
         {
-            id : 1,
+            id : 4,
             src : `/subimages/${sub4}.jpg`,
             Name : sub4,
             teacher : "Mr Isaac"
         },
         {
-            id : 1,
+            id : 5,
             src : `/subimages/${sub5}.jpg`,
             Name : sub5,
             teacher : "Mr Segun"
         },
         {
-            id : 1,
+            id : 6,
             src : `/subimages/${sub6}.jpg`,
             Name : sub6,
             teacher : "Mrs Lovely"
         },
         {
-            id : 1,
+            id : 7,
             src : `/subimages/${sub7}.jpg`,
             Name : sub7,
             teacher : "Mr Raymond"
         },
         {
-            id : 1,
+            id : 8,
             src : `/subimages/${sub8}.jpg`,
             Name : sub8,
             teacher : "Mrs Hope"
         },
         {
-            id : 1,
+            id : 9,
             src : `/subimages/${sub9}.jpg`,
             Name : sub9,
             teacher : "Mrs Folarin"
