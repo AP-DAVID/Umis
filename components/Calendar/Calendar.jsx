@@ -7,9 +7,12 @@ import {
   faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 import {motion, AnimatePresence} from 'framer-motion';
+import { useRouter } from 'next/router';
+
 
 
 export const HeaderSelector = ({ text, index, selected, setActive, classType }) => {
+  
   return (
     <div
       className={classType}
@@ -163,10 +166,14 @@ export const Calendar = () => {
     }
   }, [firstDate, secondDate]);
 
+  const router = useRouter();
+
   useEffect(() => {
     initDate();
     getNoOfDays();
+    router.replace(router.asPath);
   }, []);
+
 
   return (
     <div className=' antialiased sans-serif'>
@@ -175,7 +182,9 @@ export const Calendar = () => {
           <div className='relative'>
             <input type='hidden' name='date' />
 
-            <div
+           
+
+            {/* <div
               onClick={() => {
                 setShowDatepicker(() => !showDatepicker);
                 console.log(showDatepicker);
@@ -188,7 +197,7 @@ export const Calendar = () => {
               <FontAwesomeIcon
                 icon={showDatepicker ? faChevronUp : faChevronDown}
               />
-            </div>
+            </div> */}
             <AnimatePresence initial={false}>
              {showDatepicker && (
                 <motion.div

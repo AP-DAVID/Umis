@@ -6,16 +6,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@heroicons/react": "^1.0.4",
+    "awesome-react-calculator": "^1.1.0",
     "chart.js": "2.9.4",
     "framer-motion": "^4.1.17",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-flip-move": "^3.0.4",
+    "simple-react-calculator": "^0.2.1",
     "tailwind-scrollbar-hide": "^1.0.3"
   },
   "devDependencies": {

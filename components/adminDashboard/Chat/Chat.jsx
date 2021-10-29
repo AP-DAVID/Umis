@@ -14,6 +14,8 @@ function Chat() {
                 
                    />
 
+
+
                      <h1 className="text-center break-words font-medium">The Chat section will be available soon</h1>
                </div>
 
