@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import Router from "next/router"
 function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
 
 
@@ -18,7 +18,7 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
             setReveal(3)
         }
         else if(title === "Chat"){
-             setReveal(4)
+             Router.push("/chat")
         }
         else if(title === "Settings"){
             setReveal(5)

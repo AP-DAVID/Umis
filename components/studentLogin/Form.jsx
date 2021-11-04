@@ -1,7 +1,9 @@
-import {UserCircleIcon, EyeOffIcon, ArrowNarrowRightIcon} from '@heroicons/react/outline'
+import {UserCircleIcon, EyeOffIcon, ArrowNarrowRightIcon, EyeIcon} from '@heroicons/react/outline'
+import { useState } from 'react';
 
 
 function Form() {
+   const [eye, setEye] = useState(false);
     return (
         <div className="h-full">
             
@@ -10,18 +12,19 @@ function Form() {
 
                 <div className="flex">
                   <input type="text" placeholder="Student ID"  
-                      className="px-5 h-14 w-4/5 sm:w-72 placeholder-gray-400 rounded-tl-lg rounded-bl-lg bg-gray-700"
+                      className="px-5 h-14 w-4/5 sm:w-72 placeholder-gray-400 text-white rounded-tl-lg rounded-bl-lg bg-gray-700"
                    
                    />
-                  <div className="h-14 w-10 px-1 items-center flex flex-col justify-center text-gray-500 bg-gray-700 rounded-tr-lg rounded-br-lg">
-                    <UserCircleIcon/>
+                  <div className="h-14 cursor-pointer w-10 px-1 items-center flex flex-col justify-center text-gray-500 bg-gray-700 rounded-tr-lg rounded-br-lg">
+                    <UserCircleIcon className="text-red-400"/>
                   </div>
                 </div>
 
                 <div className="flex">
-                  <input type="password" placeholder="Password"  className="px-5 h-14 w-4/5 sm:w-72 placeholder-gray-400 rounded-tl-lg rounded-bl-lg bg-gray-700"/>
-                  <div className="h-14 w-10 px-1 flex flex-col justify-center items-center text-gray-500 bg-gray-700 rounded-tr-lg rounded-br-lg">
-                    <EyeOffIcon />
+                  <input type={eye ? "text" : "password"} placeholder="Password"  className="px-5 h-14 w-4/5 sm:w-72 text-white placeholder-gray-400 rounded-tl-lg rounded-bl-lg bg-gray-700"/>
+                  <div onClick={() => setEye(!eye)} className="h-14 w-10 px-1 flex cursor-pointer flex-col justify-center items-center text-gray-500 bg-gray-700 rounded-tr-lg rounded-br-lg">
+                    {!eye && <EyeOffIcon className="text-red-400"/>}
+                    {eye && <EyeIcon className="text-blue-300"/>}
                   </div>
                 </div>
                

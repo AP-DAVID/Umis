@@ -1,4 +1,4 @@
-import { HandIcon } from "@heroicons/react/outline"
+import { HandIcon, PlusIcon } from "@heroicons/react/outline"
 import Table from "./Table"
 function Students() {
     return (
@@ -18,6 +18,12 @@ function Students() {
 
 
             <Table />
+
+
+            <div  className="px-2 py-4 rounded-full cursor-pointer fixed p-14 bottom-8 right-3 sm:right-80 origin-bottom-right space-y-2 text-align group">
+                  <div className="invisible group-hover:visible  "><h1 className="text-sm text-gray-500 font-md">add</h1></div>
+                  <div className="rounded-full px-3 py-3 bg-green-500"><PlusIcon className="hover:animate-spin h-6 w-6"/></div>
+            </div>
 
 
 

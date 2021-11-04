@@ -1,12 +1,12 @@
 
 import {FolderIcon, UserCircleIcon, DotsVerticalIcon, UserIcon} from "@heroicons/react/outline"
-
+import Router from "next/router"
 function Groupcard() {
     return (
         <div className="mt-10 mb-10 mr-5 relative group cursor-pointer transition duration-200 rounded-xl 
             ease-in transform sm:hover:scale-105 hover:z-50
             border-2 rounded-t-lg h-72 sm:h-60 w-full flex flex-col justify-between justify-self-center"
-
+            onClick={() => Router.push("/groups")}
         >
             <div className="h-1/3 bg-no-repeat justify-between flex flex-col bg-cover bg-gray-600 w-full rounded-t-lg " style={{backgroundImage:`url("https://images.unsplash.com/photo-1506220926022-cc5c12acdb35?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")`}}>
                  <div className="flex justify-between ml-3">
