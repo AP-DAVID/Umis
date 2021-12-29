@@ -1,5 +1,5 @@
 import { HandIcon } from "@heroicons/react/outline"
-import Piec from "./shared/Piec"
+import Chart from "./shared/Chart"
 import dynamic from 'next/dynamic'
 import Barchart from "./Shared/Barchart"
 
@@ -27,14 +27,14 @@ function Feed() {
             
             <div className=" mt-5 flex lg:justify-center">
               <div className="w-5/6 mr-3 sm:ml-0 sm:w-4/5 lg:w-5/6">
-                 <Piec />
+                 <Chart />
             </div>
           </div>
 
             <div className="sm:px-3 md:pr-6 py-3 mb-14 flex mt-12  flex-col justify-around  w-full sm:flex-row">
 
                 <div className=" h-64 w-80  mb-5 px-2 py-2 rounded-xl sm:w-2/6">
-                  <Piec />
+                  <Chart />
                 </div>
                 {/* <div className=" h-64 bg-yellow-100 mb-5 px-2 py-2 rounded-xl sm:w-2/6">
                   <Funnel />

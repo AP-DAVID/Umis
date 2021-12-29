@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "chart.js";
 
-export default function Piec() {
+export default function Chart() {
   React.useEffect(() => {
     let config = {
       type: "bar",
