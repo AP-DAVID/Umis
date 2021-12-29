@@ -2,18 +2,19 @@ import {
     SearchIcon,
     BellIcon
 } from "@heroicons/react/outline";
+import Search from './Search'
 
-function Header() {
+function Header({data, login, onSearch, setSection}) {
     return (
-        <div className="sticky">
+        <div className="relative">
             
             <div className="py-7 px-2">
                 
 
-                <div className="flex md:ml-2 px-2 w-56 rounded-full bg-gray-200 p-2">
-                    <SearchIcon className="h-6 text-gray-600"/>
-                    <input className="inline-flex ml-2 bg-transparent outline-none
-                     placeholder-gray-500 " type="text" placeholder="Search"/>
+                <div className="z-50">
+                    <Search data={data} className="z-50" login={login.user} onSearch={onSearch} setSection={setSection}/>
+                    {/* <input className="inline-flex ml-2 bg-transparent outline-none
+                     placeholder-gray-500 " type="text" placeholder="Search"/> */}
                 </div>
 
 

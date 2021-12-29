@@ -43,23 +43,23 @@ function Pricing() {
               <div className="p-5 lg:p-6 bg-purple-500 space-y-5 lg:space-y-6 text-white rounded-b-lg">
               <ul className="space-y-4 text-sm lg:text-base">
                   <li className="flex items-center space-x-2">
-                    <svg className="text-white w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-white w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Database Maintenance</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-white w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-white w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span className="line-through"><strong>Unlimited</strong> Maintenance </span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-white w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-white w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Group Access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-white w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-white w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span className="line-through"><strong>Unlimited</strong> Chat Access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-white w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-white w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Other</strong> Functions</span>
                   </li>
                 </ul>
@@ -94,23 +94,23 @@ function Pricing() {
               <div className="p-5 lg:p-6 bg-red-300 space-y-5 lg:space-y-6 text-gray-700 rounded-b-lg">
                 <ul className="space-y-4 text-sm lg:text-base">
                   <li className="flex items-center space-x-2">
-                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Database access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>3 months</strong> Maintenance</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Group Access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-green-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Chat access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Other</strong> Functions</span>
                   </li>
                  
@@ -145,23 +145,23 @@ function Pricing() {
               <div className="p-5 lg:p-6 bg-blue-500 space-y-5 lg:space-y-6 text-white rounded-b-lg">
                 <ul className="space-y-4 text-sm lg:text-base">
                   <li className="flex items-center space-x-2">
-                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                   </li>
                     <span><strong>Unlimited</strong> Database Maintenance</span>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Maintenance </span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Group Access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Unlimited</strong> Chat Access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="text-yellow-500 w-5 h-5 inline-block" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"></path></svg>
                     <span><strong>Other</strong> Functions</span>
                   </li>
                 </ul>

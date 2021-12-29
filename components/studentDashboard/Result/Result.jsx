@@ -1,30 +1,46 @@
 import Image from 'next/image'
+import Resultcard from './Resultcard'
+import { Result, Button } from 'antd';
+import { SmileOutlined } from '@ant-design/icons';
 
 
-function Result() {
+function Resultt({data}) {
+
+    console.log(data.results)
     return (
-        <div className="mt-16 sm:mt-2 flex flex-col w-full justify-center items-center group">
-
-           <div className="flex w-full justify-center">
+        <div className="flex md:ml-10 flex-col w-full pt-6 overflow-y-scroll h-screen scrollbar-hide">
 
 
-               <div className="flex flex-col space-y-5">
+              {
+                  data.results.length != 0 ? 
+                    
+                    <div className="sm:px-5 my-10 space-x-1 sm:mr:10 justify-items-stretch sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
+                        {
+                            data.results?.map((result) => (
+                                <Resultcard result = {result}/>
+                            ))
+                        }
+                        
+                        
 
-                   <Image src="/resultdog.svg" className="text-blue-400 hover:animate-bounce" height={500} width={550} 
+
+                    </div>
+
+                  : (
+                    
+                    <Result
+                        icon={<SmileOutlined />}
+                        title="Your results will show here.!"
+                   
+                     />
+                  )
+
+              }
                 
-                   />
 
-                     <h1 className="text-center break-words font-medium">Your result will show here when uploaded</h1>
-               </div>
-
-                
-
-           </div>
-
-            
             
         </div>
     )
 }
 
-export default Result
+export default Resultt

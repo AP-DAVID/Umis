@@ -59,7 +59,7 @@ function Landing() {
               <div className="flex flex-wrap">
 
 
-                <div onClick={() => Router.push("/teachers/login")} className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
+                <div onClick={() => Router.push("/teacher")} className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
                   <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
@@ -73,7 +73,7 @@ function Landing() {
                   </div>
                 </div>
   
-                <div onClick={() => Router.push("/students/login")} className="w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
+                <div onClick={() => Router.push("/student")} className="w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
                   <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
@@ -89,7 +89,7 @@ function Landing() {
                   </div>
                 </div>
   
-                <div onClick={() => Router.push("/admin/login")} className="pt-6 w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
+                <div onClick={() => Router.push("/admin")} className="pt-6 w-full md:w-4/12 px-4 text-center cursor-pointer ease-in transform sm:hover:scale-105 hover:z-50">
                   <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">

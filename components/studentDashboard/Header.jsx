@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 
 
-function Header() {
+function Header({username}) {
     return (
         <div className='sticky w-full top-0 z-50 flex align-middle justify-between bg-white p-2 lg:px-5'>
 
@@ -38,7 +38,7 @@ function Header() {
 
                         <Image src="/dogface.svg" height={30} width="30" className="group-hover:animate-bounce" layout="fixed"/>
 
-                        <h4 className="hidden group-hover:inline-flex sm:inline-flex text-md text-gray-900"> Username </h4>
+                        <h4 className="hidden group-hover:inline-flex sm:inline-flex text-md text-gray-900">{username} </h4>
 
                     </div>
 

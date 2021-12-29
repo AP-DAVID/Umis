@@ -5,12 +5,14 @@ import Thumbnail from "./Thumbnail"
 
 
 
-function Subjects({SubjectOffering}) {
+function Subjects({SubjectOffering, login}) {
+
+    const subjects = login?.subject;
     return (
         <div className ="flex md:ml-10 flex-col w-full pt-6 scrollbar-hide overflow-y-scroll h-screen" >
         
 
-        
+           
 
            <div>
                <div className="mt-6 " /> 
@@ -27,8 +29,8 @@ function Subjects({SubjectOffering}) {
 
             <div className="sm:px-5 my-10 mr:10  sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
 
-                {SubjectOffering.map(subject =>(
-                    <Thumbnail key={subject.id}  source={subject.src} text1={subject.Name} text2={subject.teacher} />
+                {subjects?.map(subject =>(
+                    <Thumbnail key={subject.id} data={subject.classId[0]}  source={subject?.picture} text1={subject?.subjectname} text2={subject.classId[0].classname} />
                 ))}
 
             </div>

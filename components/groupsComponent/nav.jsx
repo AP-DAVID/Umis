@@ -2,7 +2,7 @@ import React from "react";
 import {MenuIcon, UserCircleIcon} from "@heroicons/react/solid"
 
 
-export default function Nav({setRoute, route}, props) {
+export default function Nav({setRoute, route, login, data}, props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <nav
@@ -24,11 +24,12 @@ export default function Nav({setRoute, route}, props) {
 
                <div className="flex flex-col hover:underline cursor-pointer">
                     <div>
-                    <h1 className="font-medium text-base">Biology</h1>
+                    <h1 className="font-medium text-base">{data?.subject[0]?.subjectname}</h1>
                     </div>
 
-                    <div>
-                    <h1 className="font-light">Mrs Akande</h1>
+                    <div className="flex space-x-2">
+                      <h1 className="font-normal text-base">Your class code :</h1>
+                      <h1 className="font-medium">{data?.code}</h1>
                     </div>
                 </div> 
                
@@ -48,7 +49,15 @@ export default function Nav({setRoute, route}, props) {
                 
 
                 <div>
-                    <UserCircleIcon className ="h-10 w-10 hidden sm:inline-flex text-purple-500"/>
+
+                    
+                    {
+                      login.profile ? (
+                        <img className="h-10 w-10 hidden sm:inline-flex rounded-full object-cover"/>
+                      ) : (
+                        <UserCircleIcon className ="h-10 w-10 hidden sm:inline-flex text-purple-500"/>
+                      )
+                    }
                 </div>
                 
            </div>

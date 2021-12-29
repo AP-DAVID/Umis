@@ -1,10 +1,8 @@
 import { HandIcon } from "@heroicons/react/outline"
-import Barchart from "./Barchart"
+import PieC from "./shared/PieC"
 import dynamic from 'next/dynamic'
+import Barchart from "./Shared/Barchart"
 
-const PieC = dynamic(() => import("./Shared/PieC"),  { ssr: false })
-
-const Funnel = dynamic(() => import("./Shared/Funnel"),  { ssr: false })
 
 
 
@@ -27,16 +25,20 @@ function Feed() {
 
             
             
-            <Barchart />
+            <div className=" mt-5 flex lg:justify-center">
+              <div className="w-5/6 mr-3 sm:ml-0 sm:w-4/5 lg:w-5/6">
+                 <PieC />
+            </div>
+          </div>
 
             <div className="sm:px-3 md:pr-6 py-3 mb-14 flex mt-12  flex-col justify-around  w-full sm:flex-row">
-                <div className=" h-64 bg-yellow-100  mb-5 px-2 py-2 rounded-xl sm:w-2/6">
+
+                <div className=" h-64 w-80  mb-5 px-2 py-2 rounded-xl sm:w-2/6">
                   <PieC />
                 </div>
-
-                <div className=" h-64 bg-yellow-100 mb-5 px-2 py-2 rounded-xl sm:w-2/6">
+                {/* <div className=" h-64 bg-yellow-100 mb-5 px-2 py-2 rounded-xl sm:w-2/6">
                   <Funnel />
-                </div>
+                </div> */}
 
                 {/* <div className="flex flex-col h-64 sm:w-1/4">
                     <div className="h-2/5 w-full px-2 py-2 rounded-xl">

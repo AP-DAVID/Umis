@@ -1,24 +1,20 @@
 import { HandIcon } from "@heroicons/react/outline"
-import Barchart from "./Barchart"
+import Barchart from "./Shared/Barchart"
+import PieC from "./shared/PieC"
 import dynamic from 'next/dynamic'
 
 
-const PieC = dynamic(() => import("./Shared/PieC"),  { ssr: false })
-
-const Funnel = dynamic(() => import("./Shared/Funnel"),  { ssr: false })
-
-const Donut = dynamic(() => import("./Shared/Donut"),  { ssr: false })
 
 
-function Feed() {
+function Feed({login}) {
     return (
-        <div className="flex md:ml-10 flex-col w-full pt-6 overflow-y-scroll scrollbar-hide h-screen">
+        <div className="flex md:ml-10 flex-col w-full pt-6 overflow-y-scroll overflow-x-hidden scrollbar-hide h-screen">
 
             <div>
                <div className="mt-6 " /> 
                <div className="flex space-x-2">
                   <HandIcon className="h-6 w-6 text-yellow-500" />
-                  <h1 className="text-md font-medium text-red-400">Hey, Admin!</h1>
+                  <h1 className="text-md font-medium text-red-400">Hey, {login.username}!</h1>
               </div>
 
                 <h1 className="text-4xl font-bold">Your Dashboard!</h1>
@@ -26,30 +22,35 @@ function Feed() {
                 
             </div>
 
-            
-            
-            <Barchart />
+            <div className="flex mt-7 lg:justify-center">
 
-            <div className="sm:px-3 md:pr-6 py-3 mb-14 flex mt-12  flex-col justify-between  w-full sm:flex-row">
-                <div className=" h-64 bg-green-100  mb-5 px-2 py-2 rounded-xl sm:w-2/6">
-                  <PieC />
+                <div className="w-5/6  ml-7 sm:ml-0 sm:w-4/5 lg:w-5/6">
+                   <PieC />
+                </div>
+            </div>
+            
+           
+
+            <div className=" sm:px-3 md:pr-6 py-3 mb-14 flex mt-12  flex-col justify-between  w-full sm:flex-row">
+                <div className=" h-64 w-80  mb-7 px-2 py-2 rounded-xl sm:w-2/6">
+                  <Barchart />
                 </div>
 
-                <div className=" h-64 bg-green-100 mb-5 px-2 py-2 rounded-xl sm:w-2/6">
-                  <Funnel />
+                <div className=" h-64 w-80 mb-7 px-2 py-2 rounded-xl sm:w-2/6">
+                    <PieC />
                 </div>
 
-                <div className="flex flex-col h-64 sm:w-1/4">
+                {/* <div className="flex flex-col h-64 sm:w-1/4">
                     <div className="h-2/5 w-full px-2 py-2  rounded-xl">
-                      <Donut />
+                       <PieC />
                     </div>
 
                     <div className="h-1/5"/>
 
                     <div className="h-2/5 w-full px-2 py-2  rounded-xl">
-                      and here
+                        <Barchart />
                     </div>
-                </div>
+                </div> */}
 
 
             </div>

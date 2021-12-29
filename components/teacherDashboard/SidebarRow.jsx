@@ -1,9 +1,15 @@
 import Image from 'next/image'
-import Router from "next/router"
+import Router, { useRouter } from "next/router";
+import {signOut} from "next-auth/client";
+
+
 function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
 
 
-    const switchScenes = () => {
+    const router = useRouter();
+
+
+    const switchScenes = async() => {
 
 
 
@@ -13,6 +19,10 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
         else if(title === "Groups"){
             setReveal(2)
          }
+
+        else if(title === "Announcement"){
+            Router.push("/announce")
+        }
 
         else if(title === "Subjects"){
             setReveal(3)
@@ -29,6 +39,10 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
         else if(srcTitle === "Admin"){
             return
         }
+        else if(title === "Log Out"){
+            await signOut();
+            await router.replace(router.asPath);
+         }
         else {
             setReveal(7)
         }

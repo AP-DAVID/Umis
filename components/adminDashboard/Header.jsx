@@ -4,24 +4,25 @@ import {
 } from "@heroicons/react/outline";
 
 import Image from 'next/image';
+import { useState } from "react";
 import Feed from "./Feed";
 import Widgets from "./Widgets";
 
 
 
-function Header() {
+function Header({username}) {
+    const [search, setSearch] = useState(false)
     return (
         <div className='sticky w-full top-0 z-50 flex align-middle justify-between bg-white p-2 lg:px-5'>
 
-            {/* SearchBox of the INput feed */}
+            {/* SearchBox of the INput feed */} 
 
             <div >
                 
 
                 <div className="flex md:ml-2 rounded-full bg-gray-100 p-2">
-                    <SearchIcon className="h-6 text-gray-600"/>
-                    <input className="hidden md:inline-flex ml-2 bg-transparent outline-none
-                     placeholder-gray-500 " type="text" placeholder="Search"/>
+                    <SearchIcon onClick ={() => setSearch(!search)} className="h-6 text-gray-600"/>
+                    <input className={`${search ? "inline-flex" : "hidden"} md:inline-flex ml-2 w-16 sm:w-36 bg-transparent outline-none placeholder-gray-500 `} type="text" placeholder="Search"/>
                 </div>
 
 
@@ -39,7 +40,7 @@ function Header() {
 
                         <Image src="/panda.svg" height={30} width="30" className="group-hover:animate-bounce" layout="fixed"/>
 
-                        <h4 className="hidden group-hover:inline-flex sm:inline-flex text-md text-gray-900"> Username </h4>
+                        <h4 className="hidden group-hover:inline-flex sm:inline-flex text-md text-gray-900"> {username} </h4>
 
                     </div>
 

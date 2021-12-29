@@ -2,7 +2,7 @@ import { UserCircleIcon, PencilAltIcon } from "@heroicons/react/outline"
 import Table from "./Table"
 
 
-function Profile() {
+function Profile({login}) {
     return (
         <div className ="ml-3 flex md:ml-10 flex-col overflow-x-scroll scrollbar-hide w-full pt-6 overflow-y-scroll h-screen" >
 
@@ -25,7 +25,7 @@ function Profile() {
 
 
            <div className="w-full">
-               <Table />
+               <Table login={login}/>
            </div>
 
 

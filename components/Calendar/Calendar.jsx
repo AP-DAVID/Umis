@@ -88,7 +88,7 @@ export const Calendar = () => {
     let selectedDate = new Date(year, month, date);
     setFirstDate(() => selectedDate)
     setDatepickerValue(() => selectedDate.toDateString());
-    setShowDatepicker(() => false);
+    setShowDatepicker(() => true);
   };
 
   // Calculates the number of days in the given month

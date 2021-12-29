@@ -7,14 +7,17 @@ import {
     UserGroupIcon,
     AcademicCapIcon,
     ChatAlt2Icon,
+    SpeakerphoneIcon,
     UserCircleIcon,
     MenuIcon,
     CogIcon,
-    XIcon
+    XIcon,
+    LogoutIcon
 } from "@heroicons/react/solid"
 
 
 import { useState } from 'react'
+
 
 
 
@@ -42,7 +45,7 @@ function Sidebar({setReveal, reveal}) {
 
         </button>
       
-        <div className={(sidebarOpen ? "sm:border-r-2 sm:flex flex-col h-screen" : "hidden sm:flex flex-col h-screen border-purple-200 border-r-2")}> 
+        <div className={(sidebarOpen ? "sm:border-r-2 sm:flex flex-col h-screen" : "hidden sm:flex flex-col h-screen shadow-2xl")}> 
 
           
             <SidebarRow src='/dashlogo.svg' srcTitle="Umis" />
@@ -50,6 +53,7 @@ function Sidebar({setReveal, reveal}) {
 
         
                 <SidebarRow setReveal={setReveal} active={reveal ===1 ? active : notActive} Icon={PresentationChartLineIcon} title="Dashboard"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===8 ? active : notActive} Icon={SpeakerphoneIcon} title="Announcement"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===2 ? active : notActive} Icon={FireIcon} title="My Subjects"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===3 ? active : notActive} Icon={UserGroupIcon} title="Groups"  />
                  <SidebarRow setReveal={setReveal} active={reveal ===7 ? active : notActive} Icon={UserCircleIcon} title="Profile"  />
@@ -58,7 +62,7 @@ function Sidebar({setReveal, reveal}) {
                
                 <SidebarRow setReveal={setReveal} active={reveal ===4 ? active : notActive} Icon={ChatAlt2Icon} title="Chat"  />
                 
-
+                <SidebarRow setReveal={setReveal} Icon={LogoutIcon} title="Log Out"  />
             
           
 

@@ -6,10 +6,13 @@ import {
     FireIcon,
     UserGroupIcon,
     AcademicCapIcon,
+    SpeakerphoneIcon,
     ChatAlt2Icon,
     UserCircleIcon,
     MenuIcon,
     CogIcon,
+    LogoutIcon,
+    ClipboardListIcon,
     XIcon
 } from "@heroicons/react/solid"
 
@@ -42,7 +45,7 @@ function Sidebar({setReveal, reveal}) {
 
         </button>
       
-        <div className={(sidebarOpen ? "sm:border-r-2 border-blue-300 sm:flex flex-col h-screen" : "hidden sm:flex border-green-200 flex-col h-screen border-r-2")}> 
+        <div className={(sidebarOpen ? "sm:border-r-2 border-blue-300 sm:flex flex-col h-screen" : "hidden sm:flex shadow-2xl  flex-col h-screen ")}> 
 
           
             <SidebarRow src='/dashlogo.svg' srcTitle="Admin" />
@@ -50,13 +53,18 @@ function Sidebar({setReveal, reveal}) {
 
         
                 <SidebarRow setReveal={setReveal} active={reveal ===1 ? active : notActive} Icon={PresentationChartLineIcon} title="Dashboard"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===9 ? active : notActive} Icon={SpeakerphoneIcon} title="Announcement"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===8 ? active : notActive} Icon={ClipboardListIcon} title="Class"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===2 ? active : notActive} Icon={FireIcon} title="Students"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===3 ? active : notActive} Icon={UserGroupIcon} title="Teachers"  />
                  <SidebarRow setReveal={setReveal} active={reveal ===7 ? active : notActive} Icon={UserCircleIcon} title="Profile"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===5 ? active : notActive} Icon={CogIcon} title="Settings"  />
                 <SidebarRow setReveal={setReveal} active={reveal ===6 ? active : notActive} Icon={AcademicCapIcon} title="Results"  />
-               
+                
                 <SidebarRow setReveal={setReveal} active={reveal ===4 ? active : notActive} Icon={ChatAlt2Icon} title="Chat"  />
+                
+
+                <SidebarRow setReveal={setReveal} Icon={LogoutIcon} title="Log Out"  />
                 
 
             

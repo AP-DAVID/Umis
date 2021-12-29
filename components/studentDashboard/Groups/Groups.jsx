@@ -1,9 +1,17 @@
-import { UserGroupIcon, PencilAltIcon } from "@heroicons/react/outline"
+import { UserGroupIcon, PencilAltIcon, PlusIcon } from "@heroicons/react/outline"
+import { useState } from "react"
 import Groupcard from "./Groupcard"
+import Modal from "./Modal"
 
 
 
-function Groups() {
+function Groups({data}) {
+
+    const [showModal, setShowModal] = useState(false)
+
+    const groups = data?.groups
+
+
     return (
         <div className ="flex md:ml-10 flex-col w-full pt-6 overflow-y-scroll h-screen scrollbar-hide" >
         
@@ -14,7 +22,7 @@ function Groups() {
                <div className="mt-6 " /> 
                <div className="flex space-x-2">
                   <UserGroupIcon className="h-6 w-6 text-yellow-500" />
-                  <h1 className="text-md font-medium text-red-400">Yo!</h1>
+                  <h1 className="text-md font-medium text-red-400">Yo!, {data?.username}</h1>
               </div>
 
               <div className="flex justify-between align-middle">
@@ -31,13 +39,33 @@ function Groups() {
                     </div>
 
                    <div className="sm:px-5  my-10 sm:mr:10 justify-items-stretch sm:space-x-1 sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
-                          <Groupcard />
-                          <Groupcard />
-                          <Groupcard />
-                          <Groupcard />
-                          <Groupcard />
-                          <Groupcard />
+                          
+                          {
+                                groups?.map((group) => (
+                                  
+                                    <Groupcard key={group._id} data={group}/>
+                                    
+                                )
+
+                                )
+                          }
+                          
                    </div>
+
+
+                   <div onClick={() => setShowModal(true)}  className="px-2 py-4 rounded-full cursor-pointer fixed p-14 bottom-8 right-3 sm:right-80 origin-bottom-right space-y-2 text-align group">
+                        <div className="invisible group-hover:visible  "><h1 className="text-sm text-gray-500 font-md">add</h1></div>
+                        <div className="rounded-full px-3 py-3 bg-purple-500"><PlusIcon className="hover:animate-spin h-6 w-6"/></div>
+                  </div>
+                   
+
+                  {
+                        showModal && (
+                            <Modal setShowModal={setShowModal} login={data} showModal = {showModal}/>
+                        )
+                 }
+
+
                    
 
           </div>

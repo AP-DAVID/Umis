@@ -1,26 +1,134 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PaystackButton } from "react-paystack"
 import {UserCircleIcon, EyeOffIcon, EyeIcon} from '@heroicons/react/outline'
 import generator from "generate-password";
 import generateUsername from "generate-username-from-email"
 import Router from "next/router";
+import { send } from 'emailjs-com';
+import Wait from "./shared/wait";
+import axios from "axios"
 
 export default function Modal({showModal, setShowModal, amount}) {
 
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
+    const [userLog, setUser] = useState("")
     const [phone, setPhone] = useState("")
+    const [passwordLog, setPassword] = useState("")
+    const [showWait, setShowWait] =  useState(false);
+
+
+    const [form, setForm] = useState(
+      {
+      email : "",
+      username: '', 
+      password: '',
+      payment: ""
+    }
+   )
 
     const publicKey = "pk_test_1e46b9ec75c413203c1df941c528a7e69c0d8745"
 
+    useEffect(async() => {
+
+        let password = await generator.generate({
+          length: 10,
+          numbers: true
+        });
+
+        let username =  await generateUsername(email)
+    
+      await setUser(username)
+      await setPassword(password)
+
+   
+      console.log(password)
+    }, [email])
 
 
-    let password = generator.generate({
-      length: 10,
-      numbers: true
+
+    const onSubmit = async() => {
+
+        setForm(form.username = userLog);
+        setForm(form.password = passwordLog);
+        setForm(form.email = email);
+
+        if(amount === 8000000) {
+          setForm(form.payment = "freelancer");
+        }
+
+        else if(amount === 25000000){
+          setForm(form.payment = "agency");
+        }
+
+        else{
+          setForm(form.payment = "enterprise");
+        }
+
+        const config = {
+          headers: {
+              "Accept" : "application/json",
+              'Content-type' : "application/json"
+          }
+        }
+
+        try{
+
+          const response = await axios.post("/api/admin", JSON.stringify(form) , config);
+
+          console.log(response);
+
+        }catch(error){
+
+          console.log(error)
+
+        }
+        
+
+    }
+
+    
+    const [toSend, setToSend] = useState({
+      from_name: 'Umis',
+      to_name: "",
+      to_email : "",
+      message: "",
+      reply_to: "blytetech@gmail.com",
     });
 
-   let username = generateUsername(email)
+    
+
+
+    const sendEmail = async() => {
+
+     onSubmit();
+
+     await setToSend(toSend.to_email = email);
+     await setToSend(toSend.to_name = name)
+     await setToSend(toSend.message = `Your username is : ${userLog} and your password is : ${passwordLog}, you can log in to your admin panel with the credentials`)
+
+    
+      await send(
+        'service_e620qji',
+        'template_dvsxd48',
+        toSend,
+        'user_s4IlFhgjRNiaSPUMgomRf'
+      )
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          Router.push("/admin")
+        })
+        .catch((err) => {
+          console.log('FAILED...', err);
+        });
+
+
+        console.log("sentttt")
+    };
+
+
+
+  
     
     
 
@@ -34,8 +142,12 @@ export default function Modal({showModal, setShowModal, amount}) {
         publicKey,
         text: "Pay Now",
         onSuccess: () => {
-           alert(`Thanks for doing business with us! Come back soon!!.. your username is ${username} and your password : ${password}`)
-           Router.push("/admin/login")
+           alert(`We have sent the username and password for your admin login to your email address`);
+           setShowWait(true)
+         
+           
+          sendEmail();
+
         },
          
         onClose: () => alert("Wait! Don't leave :("),
@@ -47,11 +159,11 @@ export default function Modal({showModal, setShowModal, amount}) {
       {showModal ? (
         <>
           <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center text-white items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
             <div className="relative w-auto my-6 mx-auto max-w-sm">
               {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="border-0 rounded-lg shadow-lg relative text-white flex flex-col w-full bg-purple-500 outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                   <h3 className="text-medium pl-16 font-semibold">
@@ -114,7 +226,11 @@ export default function Modal({showModal, setShowModal, amount}) {
 
                
 
-               
+               {
+                 showWait && (
+                    <Wait showWait = {showWait}/>
+                 )
+               }
 
 
 

@@ -1,10 +1,14 @@
 import Image from 'next/image'
-import Router from "next/router"
+import Router, { useRouter } from "next/router";
+import {signOut} from "next-auth/client";
+
 function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
+     
+    const router = useRouter();
 
 
-    const switchScenes = () => {
-
+    const switchScenes = async() => {
+        
 
 
         if(title === "Dashboard"){
@@ -12,6 +16,9 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
         }
         else if(title === "My Subjects"){
             setReveal(2)
+         }
+         else if(title === "Announcement"){
+            Router.push("/announce")
          }
 
         else if(title === "Groups"){
@@ -29,6 +36,10 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
         else if(srcTitle === "Umis"){
             return
         }
+        else if(title === "Log Out"){
+            await signOut();
+            await router.replace(router.asPath);
+         }
         else {
             setReveal(7)
         }
