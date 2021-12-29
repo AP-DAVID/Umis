@@ -303,7 +303,7 @@
   "resolved" "https://registry.npmjs.org/@editorjs/delimiter/-/delimiter-1.2.0.tgz"
   "version" "1.2.0"
 
-"@editorjs/editorjs@*":
+"@editorjs/editorjs@*", "@editorjs/editorjs@^2.22.2":
   "integrity" "sha512-rPCv7Z5LZebreQaaL4DZuWzoVGEqwB+P7BF1dsefGQNBmLyeLF412topeW2b6e+g4l1oQ7t75kCOACNTEyYYIA=="
   "resolved" "https://registry.npmjs.org/@editorjs/editorjs/-/editorjs-2.22.2.tgz"
   "version" "2.22.2"
@@ -349,7 +349,7 @@
   "resolved" "https://registry.npmjs.org/@editorjs/marker/-/marker-1.2.2.tgz"
   "version" "1.2.2"
 
-"@editorjs/paragraph@*":
+"@editorjs/paragraph@*", "@editorjs/paragraph@^2.8.0":
   "integrity" "sha512-z6w5ZR0ru3p/IjxJW/tb7OcSnVttkZukQMIsnBMX1FIKc1BNdr7NwM1YoCyTl4OnC90YfL0xgES6/20/W267pw=="
   "resolved" "https://registry.npmjs.org/@editorjs/paragraph/-/paragraph-2.8.0.tgz"
   "version" "2.8.0"

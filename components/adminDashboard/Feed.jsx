@@ -1,6 +1,6 @@
 import { HandIcon } from "@heroicons/react/outline"
 import Barchart from "./Shared/Barchart"
-import PieC from "./shared/PieC"
+import Piec from "./Shared/Piec"
 import dynamic from 'next/dynamic'
 
 
@@ -25,7 +25,7 @@ function Feed({login}) {
             <div className="flex mt-7 lg:justify-center">
 
                 <div className="w-5/6  ml-7 sm:ml-0 sm:w-4/5 lg:w-5/6">
-                   <PieC />
+                   <Piec />
                 </div>
             </div>
             
