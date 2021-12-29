@@ -4762,7 +4762,7 @@
   "resolved" "https://registry.npmjs.org/suneditor-react/-/suneditor-react-3.3.1.tgz"
   "version" "3.3.1"
 
-"suneditor@^2.41.2":
+"suneditor@^2.41.2", "suneditor@^2.41.3":
   "integrity" "sha512-V4Hz1PY2MhIhw2Lf1iInjEhuVp65B5EbqKb8GpBluZDfx3MnZnNm5v/+Ssr1rV9swTCUWOsl8Qo92KhLMZIllA=="
   "resolved" "https://registry.npmjs.org/suneditor/-/suneditor-2.41.3.tgz"
   "version" "2.41.3"
