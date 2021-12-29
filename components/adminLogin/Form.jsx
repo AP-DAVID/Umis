@@ -127,7 +127,7 @@ function Form() {
                 <div>
                     <button type="button" onClick={handleSubmit}  className="h-14 w-60 sm:w-80 ml-1 text-white hover:shadow-xl rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-red-500   hover:from-green-400 hover:to-blue-500">
                         <div className="flex justify-between items-center px-4">
-                            <div><h1>Login to Your Account</h1></div>
+                            <div><h1 className='text-white'>Login to Your Account</h1></div>
 
                            <ArrowNarrowRightIcon className="text-white h-12 w-8"/>
 

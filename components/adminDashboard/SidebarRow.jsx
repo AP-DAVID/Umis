@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Router, { useRouter } from "next/router";
 import {signOut} from "next-auth/client";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -84,7 +85,7 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
 
             {
                 Icon && (
-                    <Icon className="h-6 w-6 md:h-8 md:w-8 group-hover:animate-bounce text-gray-500"/>
+                    <FontAwesomeIcon icon={Icon} className="h-6 w-6 md:h-8 md:w-8 group-hover:animate-bounce text-gray-500"/>
                 )
             }
             <p className="hidden  sm:inline-flex font-medium"> {title} </p>

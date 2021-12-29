@@ -1,5 +1,6 @@
 import SidebarRow from "./SidebarRow"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
     PresentationChartLineIcon,
@@ -18,7 +19,7 @@ import {
 
 
 import { useState } from 'react'
-import { faTemperatureHigh } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook, faBullhorn, faCaretSquareUp, faCog, faComments, faGraduationCap, faSignOutAlt, faTachometerAlt, faTemperatureHigh, faUser, faUsers, faUserSecret } from "@fortawesome/free-solid-svg-icons";
 
 
 function Sidebar({setReveal, reveal}) {
@@ -49,22 +50,22 @@ function Sidebar({setReveal, reveal}) {
 
           
             <SidebarRow src='/dashlogo.svg' srcTitle="Admin" />
-
+         
 
         
-                <SidebarRow setReveal={setReveal} active={reveal ===1 ? active : notActive} Icon={PresentationChartLineIcon} title="Dashboard"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===9 ? active : notActive} Icon={SpeakerphoneIcon} title="Announcement"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===8 ? active : notActive} Icon={ClipboardListIcon} title="Class"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===2 ? active : notActive} Icon={FireIcon} title="Students"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===3 ? active : notActive} Icon={UserGroupIcon} title="Teachers"  />
-                 <SidebarRow setReveal={setReveal} active={reveal ===7 ? active : notActive} Icon={UserCircleIcon} title="Profile"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===5 ? active : notActive} Icon={CogIcon} title="Settings"  />
-                <SidebarRow setReveal={setReveal} active={reveal ===6 ? active : notActive} Icon={AcademicCapIcon} title="Results"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===1 ? active : notActive} Icon={faTachometerAlt} title="Dashboard"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===9 ? active : notActive} Icon={faBullhorn} title="Announcement"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===8 ? active : notActive} Icon={faCaretSquareUp} title="Class"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===2 ? active : notActive} Icon={faAddressBook} title="Students"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===3 ? active : notActive} Icon={faUsers} title="Teachers"  />
+                 <SidebarRow setReveal={setReveal} active={reveal ===7 ? active : notActive} Icon={faUser} title="Profile"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===5 ? active : notActive} Icon={faCog} title="Settings"  />
+                {/* <SidebarRow setReveal={setReveal} active={reveal ===6 ? active : notActive} Icon={} title="Results"  /> */}
                 
-                <SidebarRow setReveal={setReveal} active={reveal ===4 ? active : notActive} Icon={ChatAlt2Icon} title="Chat"  />
+                <SidebarRow setReveal={setReveal} active={reveal ===4 ? active : notActive} Icon={faComments} title="Chat"  />
                 
-
-                <SidebarRow setReveal={setReveal} Icon={LogoutIcon} title="Log Out"  />
+                
+                <SidebarRow setReveal={setReveal} Icon={faSignOutAlt} title="Log Out"  />
                 
 
             

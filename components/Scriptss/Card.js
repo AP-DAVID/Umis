@@ -32,7 +32,7 @@ function BlogCard({title, id, profile, body, userId, date, text, position, usern
 
 
                             <Link  href={`/announce/${id}`}>
-                                <div  className="bg-gray-100 shadow-2xl hover:shadow-xl rounded-xl rounded-t-xl w-full">
+                                <div  className="bg-gray-100 shadow-2xl hover:shadow-xl rounded-xl rounded-t-xl w-5/6 sm:w-full">
                                     <div className="">
                                         <Image
                                             src={image} alt=""
@@ -47,16 +47,16 @@ function BlogCard({title, id, profile, body, userId, date, text, position, usern
 
                                         <div className="px-2 py-1">
 
-                                            <h1 className="font-bold break-words text-lg line-clamp-2">
+                                            <h1 className="font-bold font-serif break-words text-lg line-clamp-2">
                                                 {title}
                                             </h1>
 
-                                            <p className="py-1 break-words line-clamp-3">
+                                            <p className="py-1 break-words font-serif line-clamp-3">
                                                 {body}
                                             </p>
                                         
-                                            <p className="py-1 font-medium break-words">
-                                                {username} {lastname}<br />
+                                            <p className="py-1 font-serif font-medium break-words">
+                                              {lastname} {username} <br />
                                                 {position}
                                             </p>
 

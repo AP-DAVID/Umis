@@ -3,6 +3,9 @@ import 'suneditor/dist/css/suneditor.min.css';
 import '../styles/globals.css'
 import 'react-quill/dist/quill.snow.css'
 import 'antd/dist/antd.css';
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 
 import {Provider} from "next-auth/client"

@@ -43,7 +43,7 @@ function Index({session, joke}) {
 
     return (
 
-        <>
+        <div className='h-screen bg-gray-700 overflow-y-scroll scrollable'>
 
           {/* Navbar */}
 
@@ -71,29 +71,22 @@ function Index({session, joke}) {
 
            session.user && showModal === false ? (
             
-            <div className="h-screen bg-gray-700">
+            <div className="h-screen overflow-y-scroll scrollable bg-gray-700">
 
                    
 
 
                     {/* Body get bloggsss */}
 
-             <div className="sm:px-7 ml-4 sm:ml-1 mr-4 sm:mr-0 justify-items-stretch sm:space-x-1 sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
+             <div className="sm:px-7  ml-16 sm:ml-1 mr-4 sm:mr-0 justify-items-stretch sm:space-x-1 sm:grid md:grid:cols-2 lg:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
                
                 {
             
                      data?.map((content) => 
                     (
                  
-                        
-                      
                         <Card key={content._id} userId={content.userId} profile ={content.profile} image={content.image} lastname={content.lastname} username={content.firstname} position={content.section} text={content.firstname} id={content._id} title={content.title}  body={content.desc} date={content.createdAt} />
                      
-            
-
-
-                       
-
                    
                        )
                    )
@@ -102,20 +95,6 @@ function Index({session, joke}) {
                 </div>
 
 
-
-
-
-
-
-
-
-
-           
-
-             
-
-             
-       
 
 
               <div onClick={() => setShowModal(true)}  className="px-2 py-4 rounded-full cursor-pointer fixed p-14 bottom-8 right-3 sm:right-80 origin-bottom-right space-y-2 text-align group">
@@ -147,7 +126,7 @@ function Index({session, joke}) {
         }
 
 
-        </>
+        </div>
     )
 }
 
