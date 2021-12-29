@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 // const PieC = dynamic(() => import("./Shared/PieC"),  { ssr: false })
 
 import  Barchart from './Shared/Barchart'
-import Chart from "./Shared/Chart"
+import Chartt from "./Shared/Chartt"
 
 
 function Feed({data, section}) {
@@ -44,7 +44,7 @@ function Feed({data, section}) {
             <div className="sm:px-3 md:pr-6 py-3 mb-14 flex mt-12  flex-col justify-center  w-full sm:flex-row">
 
                 <div className=" h-64  mb-5 px-2 py-2 rounded-xl sm:w-2/6">
-                  <Chart />
+                  <Chartt />
                 </div>
 
               

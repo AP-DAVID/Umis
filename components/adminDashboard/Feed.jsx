@@ -1,6 +1,6 @@
 import { HandIcon } from "@heroicons/react/outline"
 import Barchart from "./Shared/Barchart"
-import Chart from "./Shared/Chart"
+import Chartt from "./Shared/Chartt"
 import dynamic from 'next/dynamic'
 
 
@@ -25,7 +25,7 @@ function Feed({login}) {
             <div className="flex mt-7 lg:justify-center">
 
                 <div className="w-5/6  ml-7 sm:ml-0 sm:w-4/5 lg:w-5/6">
-                   <Chart />
+                   <Chartt />
                 </div>
             </div>
             
@@ -37,7 +37,7 @@ function Feed({login}) {
                 </div>
 
                 <div className=" h-64 w-80 mb-7 px-2 py-2 rounded-xl sm:w-2/6">
-                    <Chart />
+                    <Chartt />
                 </div>
 
                 {/* <div className="flex flex-col h-64 sm:w-1/4">

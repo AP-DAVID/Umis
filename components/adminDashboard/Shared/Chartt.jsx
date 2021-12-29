@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "chart.js";
 
-export default function Chart() {
+export default function Chartt() {
   React.useEffect(() => {
     let config = {
       type: "bar",
