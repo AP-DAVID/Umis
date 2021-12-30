@@ -20,7 +20,7 @@ import Providers from "next-auth/providers";
                             'Content-type' : "application/json"
                         }
                     }
-                    const baseUrl = "http://localhost:3000";
+                    const baseUrl = "https://umisexample.vercel.app";
                     const res = await fetch(baseUrl + '/api/login', {
                         method: 'POST',
                         body: JSON.stringify(credentials),
@@ -60,7 +60,7 @@ import Providers from "next-auth/providers";
                           'Content-type' : "application/json"
                       }
                   }
-                  const baseUrl = "http://localhost:3000";
+                  const baseUrl = "https://umisexample.vercel.app";
                   const res = await fetch(baseUrl + '/api/login/student', {
                       method: 'POST',
                       body: JSON.stringify(credentials),
@@ -100,7 +100,7 @@ import Providers from "next-auth/providers";
                             'Content-type' : "application/json"
                         }
                     }
-                    const baseUrl = "http://localhost:3000";
+                    const baseUrl = "https://umisexample.vercel.app";
                     const res = await fetch(baseUrl + '/api/login/teacher', {
                         method: 'POST',
                         body: JSON.stringify(credentials),
