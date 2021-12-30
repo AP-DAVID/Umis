@@ -69,11 +69,11 @@ function Index({session, data}) {
 
 export default Index
 
-export async function getServerSideProps(ctx){
+export async function getServerSideProps({params}){
   
-    const { id } = await ctx.query;
+ 
      
-    const res = await getData(id)
+    const res = await getData(params.id)
     const data = await JSON.parse(JSON.stringify(res))
 
 
