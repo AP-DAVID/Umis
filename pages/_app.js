@@ -5,6 +5,7 @@ import 'react-quill/dist/quill.snow.css'
 import 'antd/dist/antd.css';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import NextNProgress from "nextjs-progressbar";
 config.autoAddCss = false
 
 
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider session={pageProps.session} >
+      <NextNProgress />
       <Component {...pageProps} />
 
     </Provider>

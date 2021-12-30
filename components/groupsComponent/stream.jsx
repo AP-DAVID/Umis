@@ -1,10 +1,21 @@
 import { BookOpenIcon, ChevronDoubleRightIcon, MenuIcon, UserCircleIcon, XIcon } from "@heroicons/react/outline"
 import { useState } from "react";
-import Quill from "./Quill"
+// import Quill from "./Quill"
 import Loader from "../Loader"
 import { useRouter } from 'next/router'
 import axios from "axios";
 import Slate from "./Slate";
+
+
+import dynamic from "next/dynamic";
+
+const Quill = dynamic(
+  () => {
+    return import("./Quill");
+  },
+  { ssr: false }
+);
+
 
 
 function Stream({data, login}) {
