@@ -69,11 +69,12 @@ function Index({session, data}) {
 
 export default Index
 
-export async function getServerSideProps({params}){
+export async function getServerSideProps(ctx){
   
- 
+    const { id } = await ctx.query;
      
-    const res = await getData(params.id)
+    const res = await getData(id)
+    const sess = await getSession(ctx)
     const data = await JSON.parse(JSON.stringify(res))
 
 
@@ -81,7 +82,7 @@ export async function getServerSideProps({params}){
     return {
       props:{
         data,
-        session: await getSession(ctx)
+        session: sess
       }
     }
   }
