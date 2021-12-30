@@ -32,7 +32,7 @@ function dashboard({ session, data }) {
         { 
            session && session.user.section === "student" ? (
 
-              <div className="h-screen overflow-y-hidden overflow-x-scroll">
+              <div className="h-screen overflow-y-hidden overflow-x-hidden">
                 {/* Header */}
                 <Header username= {login.username} />
               <main className="flex">

@@ -31,7 +31,7 @@ import Providers from "next-auth/providers";
 
                     const user = await res.json();
                     
-            
+                   
                     
                     if(user){
                         return user
@@ -71,7 +71,7 @@ import Providers from "next-auth/providers";
 
                   const user = await res.json();
                   
-          
+     
                   
                   if(user){
                       return user
@@ -111,7 +111,7 @@ import Providers from "next-auth/providers";
 
                     const user = await res.json();
                     
-            
+                 
                     
                     if(user){
                         return user
