@@ -66,12 +66,12 @@ function SidebarRow({active, src, Icon, title, srcTitle, setReveal}) {
 
                   <div className="flex space-x-3 ">
                         <Image 
-                        className="rounded-full"
-                        src={src}
-                        width={30}
-                        height={30}
-                        layout="fixed"
-                        className="text-blue-500"
+                            className="rounded-full text-blue-500"
+                            src={src}
+                            width={30}
+                            height={30}
+                            layout="fixed"
+                        
                         
                         />
 

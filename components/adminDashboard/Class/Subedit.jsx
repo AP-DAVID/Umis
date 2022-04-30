@@ -1,12 +1,9 @@
 import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Space } from 'antd';
-import { InputNumber } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import Loader from '../../Loader';
 import { Popconfirm, message} from 'antd';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { UserRemoveIcon } from '@heroicons/react/outline';
 import { TrashIcon } from '@heroicons/react/solid';
 
 const { Option } = Select;
@@ -21,6 +18,7 @@ export default function Subedit({visible, setVisible, data, subject}) {
            teacher : subject?.teacher[0]?._id
         }
     )
+
 
     function cancel(e) {
         console.log(e);

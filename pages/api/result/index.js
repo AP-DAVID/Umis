@@ -1,21 +1,18 @@
+import ConnectToDatabase from "../../../backend/server";
 
-import ConnectToDatabase from "../../../backend/server"
+import Resultlist from "../../../models/Resultlist";
 
-import Resultlist from "../../../models/Resultlist"
+import Result from "../../../models/Result";
 
-import Result from "../../../models/Result"
+import Student from "../../../models/Student";
 
-import Student from "../../../models/Student"
-
-import nextConnect from "next-connect"
-
+import nextConnect from "next-connect";
 
 ConnectToDatabase();
 const handler = nextConnect();
 
-
 // handler.get(async(req, res)=>{
-    
+
 //   const {
 //      query:{id}
 //   }= req
@@ -28,80 +25,90 @@ const handler = nextConnect();
 //     }
 // })
 
-  export const config = {
-    api: {
-      bodyParser: {
-        sizeLimit: '16mb',
-      },
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "16mb",
     },
-  }
+  },
+};
 
+handler.post(async (req, res) => {
+  const { score, grade, term, adminId, studentId, subjectname, classname } =
+    req.body;
 
+  try {
+    const findTerm = await Result.findOne({
+      term: term,
+      studentId: studentId,
+      classname: classname,
+    });
 
+    if (findTerm) {
+      const findResult = await Resultlist.findOne({
+        term: term,
+        classname: classname,
+        subjectname: subjectname,
+      });
 
-handler.post(async(req, res) =>{
-    const {score, grade, term, adminId, studentId, subjectname, classname} = req.body
+      if (findResult) {
+        const result = await Resultlist.findByIdAndUpdate(findResult._id, {
+          $set: { grade: grade, score: score },
+        });
+        result.save();
+        res.status(200).json("donee");
+      } else {
+        const newResult = await Resultlist.create({
+          term: term,
+          classname: classname,
+          grade: grade,
+          score: score,
+          subjectname: subjectname,
+          student: studentId,
+        });
+        newResult.save();
 
-    
-     
-    try {
-       
-        const findTerm = await Result.findOne({term : term, studentId : studentId, classname : classname});
+        const newRest = await Result.findByIdAndUpdate(findTerm._id, {
+          $push: { results: newResult._id },
+        });
+        newRest.save();
 
-        if(findTerm){
+        res.status(200).json("yepp");
+      }
+    } else {
+      const newResult = await Result.create({
+        term: term,
+        adminId: adminId,
+        studentId: studentId,
+        classname: classname,
+      });
+      await newResult.save();
 
-            const findResult = await Resultlist.findOne({term : term, classname : classname, subjectname : subjectname});
+      const resultList = await Resultlist.create({
+        term: term,
+        classname: classname,
+        grade: grade,
+        score: score,
+        subjectname: subjectname,
+        student: studentId,
+      });
+      await resultList.save();
 
-            if(findResult){
+      const newRest = await Result.findByIdAndUpdate(newResult._id, {
+        $push: { results: resultList._id },
+      });
+      await newRest.save();
 
-                const result = await Resultlist.findByIdAndUpdate(findResult._id, {
-                    $set : {grade : grade, score : score}
-                });
-                result.save();
-                res.status(200).json("donee")
-            }else{
+      const newStudent = await Student.findByIdAndUpdate(studentId, {
+        $push: { results: newResult._id },
+      });
+      await newStudent.save();
 
-                const newResult = await Resultlist.create({term : term, classname : classname, grade : grade, score : score, subjectname : subjectname, student : studentId })
-                newResult.save();
-
-                const newRest = await Result.findByIdAndUpdate(findTerm._id,{
-                    $push : {results : newResult._id},
-                  });
-                newRest.save();
-
-                res.status(200).json("yepp")
-              }
-
-
-        }else{
-           
-            const newResult = await Result.create({term : term, adminId : adminId, studentId : studentId, classname : classname})
-            await newResult.save();
-
-            const resultList = await Resultlist.create({ term : term, classname : classname,  grade : grade, score : score, subjectname : subjectname, student : studentId})
-            await resultList.save();
-
-            const newRest = await Result.findByIdAndUpdate(newResult._id,{
-                $push : {results : resultList._id},
-              });
-            await newRest.save();
-
-            const newStudent = await Student.findByIdAndUpdate(studentId,{
-              $push : {results : newResult._id},
-            });
-            await newStudent.save();
-
-            res.status(200).json("yepp")
-
-
-
-
-        }
-      
-    } catch (error) {
-        console.error(error)
+      res.status(200).json("yepp");
     }
-})
+  } catch (error) {
+    console.error(error);
+  }
+});
 
-
-export default handler
+export default handler;

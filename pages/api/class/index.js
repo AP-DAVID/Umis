@@ -1,10 +1,8 @@
-
-import ConnectToDatabase from "../../../backend/server"
+import ConnectToDatabase from "../../../backend/server";
 import Class from "../../../models/Class";
-import Admin from "../../../models/Admin"
+import Admin from "../../../models/Admin";
 
-import nextConnect from "next-connect"
-
+import nextConnect from "next-connect";
 
 ConnectToDatabase();
 const handler = nextConnect();
@@ -18,40 +16,36 @@ const handler = nextConnect();
 //   }
 // })
 
+handler.post(async (req, res) => {
+  const { classname, adminId } = req.body;
 
+  try {
+    const classnamefind = await Class.findOne({
+      classname: classname,
+      adminId: adminId,
+    });
 
-
-handler.post(async(req, res) =>{
-    const {classname, adminId} = req.body
-
-    
-
-    try {
-        const classnamefind = await Class.findOne({classname : classname, adminId : adminId});
-
-        if(classnamefind){
-            res.status(200).json("Class found");
-        }
-
-       
-
-       
-
-        if(!classnamefind){
-          const newRegister = await Class.create({ classname : classname, adminId : adminId});
-          newRegister.save()
-
-          const newClass = await Admin.findByIdAndUpdate(adminId,{
-            $push : {classes : newRegister._id},
-          });
-          newClass.save();
-
-          res.status(201).json(newRegister)
-        }
-    } catch (error) {
-        console.error(error)
+    if (classnamefind) {
+      res.status(200).json("Class found");
     }
-})
 
+    if (!classnamefind) {
+      const newRegister = await Class.create({
+        classname: classname,
+        adminId: adminId,
+      });
+      newRegister.save();
 
-export default handler
+      const newClass = await Admin.findByIdAndUpdate(adminId, {
+        $push: { classes: newRegister._id },
+      });
+      newClass.save();
+
+      res.status(201).json(newRegister);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+export default handler;

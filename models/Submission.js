@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-import Subject from './Subject'
 import Student from './Student'
 
 const SubmissionSchema = new mongoose.Schema(

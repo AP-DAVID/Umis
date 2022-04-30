@@ -13,6 +13,23 @@ const AdminSchema = new mongoose.Schema(
         max : 25,
        
     },
+    phone : {
+        type : Number,
+        required : true
+    },
+    country : {
+        type : Number,
+        required : true
+    },
+    state : {
+        type : String,
+        required : true
+    },
+    schoolname : {
+        
+        type : String,
+        required : true
+    },
     
     email:{
         type : String,

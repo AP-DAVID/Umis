@@ -25,8 +25,6 @@ function Resultcard({data, result}) {
                 <div className="flex justify-between ml-3 mr-2">
 
                         <h1 className="text-white text-sm font-light">{result.term} term </h1>
-
-
                         <div className="bg-gray-300 object-cover items-center h-12 w-12 filter rounded-full lg:rounded-3xl brightness-75 justify-self-end ">
 
                             <UserIcon
@@ -46,9 +44,6 @@ function Resultcard({data, result}) {
                     <UserCircleIcon className="h-7 w-6 text-gray-400  hover:text-blue-300 hover:animate-bounce"/>
 
                 </div>
-
-                
-                
             </div>
             {
                 openModal && (

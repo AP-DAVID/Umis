@@ -3,17 +3,7 @@ import SidebarRow from "./SidebarRow"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
-    PresentationChartLineIcon,
-    FireIcon,
-    UserGroupIcon,
-    AcademicCapIcon,
-    SpeakerphoneIcon,
-    ChatAlt2Icon,
-    UserCircleIcon,
     MenuIcon,
-    CogIcon,
-    LogoutIcon,
-    ClipboardListIcon,
     XIcon
 } from "@heroicons/react/solid"
 

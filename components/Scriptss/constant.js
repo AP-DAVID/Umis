@@ -17,8 +17,7 @@ import SimpleImage from "@editorjs/simple-image";
 import { useState } from "react";
 
 const CustomEditor = () => {
-
-const EDITOR_JS_TOOLS = {
+  const EDITOR_JS_TOOLS = {
     embed: Embed,
     table: Table,
     marker: Marker,
@@ -33,30 +32,23 @@ const EDITOR_JS_TOOLS = {
     checklist: CheckList,
     delimiter: Delimiter,
     inlineCode: InlineCode,
-    simpleImage: SimpleImage
+    simpleImage: SimpleImage,
+  };
+
+  const [data, setData] = useState("");
+
+  console.log(data);
+
+  return (
+    <div className="border-2 border-r-8 w-full ">
+      <EditorJs
+        data={{
+          time: 1556098174501,
+        }}
+        tools={EDITOR_JS_TOOLS}
+      />
+    </div>
+  );
 };
-
-const [data, setData] = useState("")
-
-console.log(data)
-
-
-
-
-return (
-
-<div className="border-2 border-r-8 w-full ">
-
-    <EditorJs data={{
-            time: 1556098174501,
-
-        }}  
-            tools={EDITOR_JS_TOOLS} 
-    />
-</div>
-
-
-);
-}
 
 export default CustomEditor;

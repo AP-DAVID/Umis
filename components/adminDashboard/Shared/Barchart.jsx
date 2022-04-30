@@ -6,14 +6,7 @@ export default function Barchart() {
     var config = {
       type: "line",
       data: {
-        labels: [
-          "Jss1",
-          "Jss2",
-          "Jss3",
-          "SS1",
-          "SS2",
-          "SS3"
-        ],
+        labels: ["Jss1", "Jss2", "Jss3", "SS1", "SS2", "SS3"],
         datasets: [
           {
             label: new Date().getFullYear(),

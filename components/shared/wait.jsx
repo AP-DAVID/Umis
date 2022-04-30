@@ -1,18 +1,13 @@
-import React, { } from "react";
+import React from "react";
 
-import {ArrowCircleLeftIcon, ArrowLeftIcon} from '@heroicons/react/outline'
+import { ArrowCircleLeftIcon, ArrowLeftIcon } from "@heroicons/react/outline";
 
-
-export default function Wait({showWait}) {
-
+export default function Wait({ showWait }) {
   return (
     <>
-
       {showWait ? (
         <>
-          <div
-            className="justify-center text-green-100 items-center px-6 shadow-lg flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-          >
+          <div className="justify-center text-green-100 items-center px-6 shadow-lg flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-sm">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-500 outline-none focus:outline-none">
@@ -32,25 +27,18 @@ export default function Wait({showWait}) {
                 </div>
                 {/*body*/}
 
-
                 <div className="flex flex-col items-center space-y-6">
+                  <div>
+                    <ArrowLeftIcon className="h-10 w-10 animate-spin text-blue-500" />
+                  </div>
 
-                    <div><ArrowLeftIcon className="h-10 w-10 animate-spin text-blue-500"/></div>
-
-                    <div><h1 className="font-mono text-base font-medium px-4 py-2">Please wait, while we redirect you to the login page</h1></div>
-                    
+                  <div>
+                    <h1 className="font-mono text-base font-medium px-4 py-2">
+                      Please wait, while we redirect you to the login page
+                    </h1>
+                  </div>
                 </div>
 
-            
-               
-
-               
-
-
-
-
-                
-                
                 {/*footer*/}
                 {/* <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                   <button

@@ -1,18 +1,21 @@
-import React, {useState, useEffect} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {HeaderSelector} from './swoopstats/performance_header';
 import {
   faCalendar,
   faChevronUp,
   faChevronDown,
-} from '@fortawesome/free-solid-svg-icons';
-import {motion, AnimatePresence} from 'framer-motion';
-import { useRouter } from 'next/router';
+} from "@fortawesome/free-solid-svg-icons";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
-
-
-export const HeaderSelector = ({ text, index, selected, setActive, classType }) => {
-  
+export const HeaderSelector = ({
+  text,
+  index,
+  selected,
+  setActive,
+  classType,
+}) => {
   return (
     <div
       className={classType}
@@ -21,7 +24,6 @@ export const HeaderSelector = ({ text, index, selected, setActive, classType }) 
         backgroundColor: index === selected ? "#b56be9" : "transparent",
         color: index === selected ? "black" : "black",
         transition: "background-color 1s",
-
       }}
     >
       {" "}
@@ -32,35 +34,32 @@ export const HeaderSelector = ({ text, index, selected, setActive, classType }) 
 
 export const Calendar = () => {
   const MONTH_NAMES = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
-  const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const [month, setMonth] = useState(new Date().getMonth());
   const [year, setYear] = useState(new Date().getFullYear());
   const [no_of_days, setNumDays] = useState([]);
   const [blankdays, setBlankDays] = useState([]);
   const [showDatepicker, setShowDatepicker] = useState(true);
-  const [datepickerValue, setDatepickerValue] = useState('');
+  const [datepickerValue, setDatepickerValue] = useState("");
   const [range, setRange] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const titles = ['Single Day', 'Range'];
+  const titles = ["Single Day", "Range"];
   const [firstDate, setFirstDate] = useState(null);
   const [secondDate, setSecondDate] = useState(null);
-
-
-
 
   useEffect(() => {
     console.log(`Month changed to: ${month}`);
@@ -83,10 +82,10 @@ export const Calendar = () => {
     return today.toDateString() === d.toDateString() ? true : false;
   };
 
-  // Gets an actual date value from the calendar number passed in 
+  // Gets an actual date value from the calendar number passed in
   const getDateValue = (date) => {
     let selectedDate = new Date(year, month, date);
-    setFirstDate(() => selectedDate)
+    setFirstDate(() => selectedDate);
     setDatepickerValue(() => selectedDate.toDateString());
     setShowDatepicker(() => true);
   };
@@ -157,12 +156,12 @@ export const Calendar = () => {
     // This function can be used to do computations when the date is changed
     if (firstDate !== null && secondDate !== null) {
       setDatepickerValue(() => {
-        return firstDate.toDateString() + ' - ' + secondDate.toDateString();
+        return firstDate.toDateString() + " - " + secondDate.toDateString();
       });
     }
 
-    if(firstDate !== null && !range) {
-      console.log('First date set not on range')
+    if (firstDate !== null && !range) {
+      console.log("First date set not on range");
     }
   }, [firstDate, secondDate]);
 
@@ -174,15 +173,12 @@ export const Calendar = () => {
     router.replace(router.asPath);
   }, []);
 
-
   return (
-    <div className=' antialiased sans-serif'>
-      <div className='container mx-auto px-4 py-2'>
-        <div className=' w-72'>
-          <div className='relative'>
-            <input type='hidden' name='date' />
-
-           
+    <div className=" antialiased sans-serif">
+      <div className="container mx-auto px-4 py-2">
+        <div className=" w-72">
+          <div className="relative">
+            <input type="hidden" name="date" />
 
             {/* <div
               onClick={() => {
@@ -199,23 +195,24 @@ export const Calendar = () => {
               />
             </div> */}
             <AnimatePresence initial={false}>
-             {showDatepicker && (
+              {showDatepicker && (
                 <motion.div
-                  className='bg-white mt-10 rounded-lg shadow p-4 absolute top-0 left-0 w-full'
-                  initial='collapse'
-                  animate='open'
-                  exit='collapsed'
+                  className="bg-white mt-10 rounded-lg shadow p-4 absolute top-0 left-0 w-full"
+                  initial="collapse"
+                  animate="open"
+                  exit="collapsed"
                   variants={{
-                    open: {opacity: 1},
-                    collapsed: {opacity: 0},
+                    open: { opacity: 1 },
+                    collapsed: { opacity: 0 },
                   }}
-                  transition={{duration: 0.5, ease: 'easeIn'}}>
-                  <div className='flex items-center'>
+                  transition={{ duration: 0.5, ease: "easeIn" }}
+                >
+                  <div className="flex items-center">
                     {titles.map((title, index) => {
                       return (
                         <HeaderSelector
                           classType={
-                            'font-skylight text-xs font-normal rounded-lg border border-black cursor-pointer h-8 w-full flex justify-center items-center m-1'
+                            "font-skylight text-xs font-normal rounded-lg border border-black cursor-pointer h-8 w-full flex justify-center items-center m-1"
                           }
                           key={index}
                           text={title}
@@ -230,87 +227,94 @@ export const Calendar = () => {
                     })}
                   </div>
                   <motion.div
-                    className='flex justify-between items-center'
-                    initial='collapse'
-                    animate='open'
-                    exit='collapsed'
+                    className="flex justify-between items-center"
+                    initial="collapse"
+                    animate="open"
+                    exit="collapsed"
                     variants={{
-                      open: {opacity: 1},
-                      collapsed: {opacity: 0},
+                      open: { opacity: 1 },
+                      collapsed: { opacity: 0 },
                     }}
-                    transition={{duration: 0.5, ease: 'easeIn'}}>
+                    transition={{ duration: 0.5, ease: "easeIn" }}
+                  >
                     <div>
-                      <span className='text-lg font-bold text-gray-800 font-skylight'>
-                        {' '}
+                      <span className="text-lg font-bold text-gray-800 font-skylight">
+                        {" "}
                         {MONTH_NAMES[month]}
                       </span>
-                      <span className='ml-1 text-lg text-gray-600 font-normal font-skylight'>
-                        {' '}
+                      <span className="ml-1 text-lg text-gray-600 font-normal font-skylight">
+                        {" "}
                         {year}
                       </span>
-                    </div>{' '}
+                    </div>{" "}
                     <div>
                       <button
-                        type='button'
-                        className='transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full'
+                        type="button"
+                        className="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                         disabled={month == 0 ? true : false}
                         onClick={() => {
                           console.log(`Left button`);
                           setMonth((prev) => prev - 1);
-                        }}>
+                        }}
+                      >
                         <svg
-                          className='h-6 w-6 text-gray-500 inline-flex'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'>
+                          className="h-6 w-6 text-gray-500 inline-flex"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth='2'
-                            d='M15 19l-7-7 7-7'
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M15 19l-7-7 7-7"
                           />
                         </svg>
                       </button>
                       <button
-                        type='button'
-                        className='transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-700 p-1 rounded-full'
+                        type="button"
+                        className="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-700 p-1 rounded-full"
                         disabled={month == 11 ? true : false}
                         onClick={() => {
                           console.log(`Right button`);
 
                           setMonth((prev) => prev + 1);
-                        }}>
+                        }}
+                      >
                         <svg
-                          className='h-6 w-6 text-gray-500 inline-flex'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'>
+                          className="h-6 w-6 text-gray-500 inline-flex"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth='2'
-                            d='M9 5l7 7-7 7'
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
                           />
                         </svg>
                       </button>
                     </div>
-                  </motion.div>{' '}
+                  </motion.div>{" "}
                   <motion.div
-                    className='flex flex-wrap mb-3 -mx-1'
-                    initial='collapse'
-                    animate='open'
-                    exit='collapsed'
+                    className="flex flex-wrap mb-3 -mx-1"
+                    initial="collapse"
+                    animate="open"
+                    exit="collapsed"
                     variants={{
-                      open: {opacity: 1, height: 'auto'},
-                      collapsed: {opacity: 0, height: 0},
+                      open: { opacity: 1, height: "auto" },
+                      collapsed: { opacity: 0, height: 0 },
                     }}
-                    transition={{duration: 0.5, ease: 'easeIn'}}>
+                    transition={{ duration: 0.5, ease: "easeIn" }}
+                  >
                     {DAYS.map((day, index) => {
                       return (
-                        <div className='px-1' key={index}>
+                        <div className="px-1" key={index}>
                           <div
                             key={index}
-                            className='text-gray-800 font-medium text-center text-xs w-7 font-skylight'>
+                            className="text-gray-800 font-medium text-center text-xs w-7 font-skylight"
+                          >
                             {day}
                           </div>
                         </div>
@@ -318,21 +322,23 @@ export const Calendar = () => {
                     })}
                   </motion.div>
                   <motion.div
-                    className='flex flex-wrap -mx-1'
-                    initial='collapse'
-                    animate='open'
-                    exit='collapsed'
+                    className="flex flex-wrap -mx-1"
+                    initial="collapse"
+                    animate="open"
+                    exit="collapsed"
                     variants={{
-                      open: {opacity: 1, height: 'auto'},
-                      collapsed: {opacity: 0, height: 0},
+                      open: { opacity: 1, height: "auto" },
+                      collapsed: { opacity: 0, height: 0 },
                     }}
-                    transition={{duration: 0.5, ease: 'easeIn'}}>
+                    transition={{ duration: 0.5, ease: "easeIn" }}
+                  >
                     {blankdays.map((day, index) => {
                       return (
-                        <div className='px-1 mb-1' key={index}>
+                        <div className="px-1 mb-1" key={index}>
                           <div
                             key={index}
-                            className='cursor-pointer text-center text-sm rounded-lg leading-loose font-skylight w-7 text-gray-700'>
+                            className="cursor-pointer text-center text-sm rounded-lg leading-loose font-skylight w-7 text-gray-700"
+                          >
                             {}
                           </div>
                         </div>
@@ -340,22 +346,23 @@ export const Calendar = () => {
                     })}
                     {no_of_days.map((day, index) => {
                       return (
-                        <div className='px-1 mb-1' key={index}>
+                        <div className="px-1 mb-1" key={index}>
                           <div
                             key={index}
                             onClick={() => {
                               range ? evalRange(day) : getDateValue(day);
                             }}
-                            className='cursor-pointer text-center text-sm rounded-lg leading-loose w-7  hover:bg-blue-400 font-skylight'
+                            className="cursor-pointer text-center text-sm rounded-lg leading-loose w-7  hover:bg-blue-400 font-skylight"
                             style={{
                               backgroundColor: isToday(day)
-                                ? '#b56be9'
+                                ? "#b56be9"
                                 : dateFromDay(day) || betweenDays(day)
-                                ? '#add8e6 '
-                                : 'white',
-                              color: 'black',
-                            }}>
-                            {' '}
+                                ? "#add8e6 "
+                                : "white",
+                              color: "black",
+                            }}
+                          >
+                            {" "}
                             {day}
                           </div>
                         </div>

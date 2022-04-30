@@ -6,9 +6,6 @@ import Student from './Student'
 const ClassSchema = new mongoose.Schema(
   {
 
-    
-
-
     classname : {
        type : String,
        required : true
